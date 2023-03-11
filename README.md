@@ -3,7 +3,7 @@ Pytorch implementation of paper '' A Spatial-Temporal Graph Convolutional Networ
 We won the 3rd place in the [OpenPack challenge 2022](https://open-pack.github.io/challenge2022).
 
 # Get started
-Please follow the in instructions in [openpack-toolkit](https://github.com/open-pack/openpack-toolkit) and [openpack-torch](https://github.com/open-pack/openpack-torch)
+Please follow the instructions in [openpack-toolkit](https://github.com/open-pack/openpack-toolkit) and [openpack-torch](https://github.com/open-pack/openpack-torch)
 
 
 # Data Preparation
