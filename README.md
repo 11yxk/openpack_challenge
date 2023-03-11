@@ -8,23 +8,35 @@ Please download data from [OpenPack dataset](https://open-pack.github.io/release
 
 # Training & Testing
 
-### Training
+### Training and Testing
 
+For skeleton data:
+Replace the path with your dataset path in 'config/ctr-gcn/configs/ctr-gcn.yaml'.
 ```
-# Example: training network on NTU RGB+D 60 cross subject
-python main.py --config ./config/nturgbd-cross-subject/default.yaml
-```
-### Testing
-
-```
-# Example: testing the joint modality of nturgbd-cross-subject dataset using second scheme
-python main.py --config ./config/nturgbd-cross-subject/default.yaml --phase test --save-score True --weights weight/CTR-GCN-Scheme2/ntu60/xsub/CS_joint.pt --model model.dynamic_ctrgcn_scheme2_test.Model
+python main.py mode=train debug=false
+python main.py mode=test debug=false
 ```
 
-- To ensemble the results of different modalities, run:
+For sensors data:
+Replace the path with your dataset path in 'config/TCN/configs/TCN.yaml'.
 ```
-# Example: ensemble four modalities on NTU RGB+D 60 cross subject
-python ensemble.py --datasets ntu/xsub --joint-dir work_dir/ntu/xsub/ctrgcn --bone-dir work_dir/ntu/xsub/ctrgcn_bone --joint-motion-dir work_dir/ntu/xsub/ctrgcn_motion --bone-motion-dir work_dir/ntu/xsub/ctrgcn_bone_motion
+python main_acc_boundary.py mode=train debug=false
+python main_acc_boundary.py mode=test debug=false
+```
+(Please remove ['U0202', 'S0300'] in openpack_toolkit/configs/datasets/splits.py from test set if have mismatch error)
+
+### Making a prediction file
+
+```
+python main.py mode=submission debug=false
+python main_acc_boundary.py mode=submission debug=false
+```
+This will generate a '.pkl' file in 'v0.3.1/log/openpack-2d-kpt/your_issue_name/modality/save_scores'
+
+
+- To ensemble the results of different modalities, replace the path with your dataset path in align.py and run:
+```
+python align.py
 ```
 
 ### Pretrained Models
