@@ -90,7 +90,7 @@ class BaseLightningModule(pl.LightningModule):
             average="weighted",
             num_classes=num_classes,
             ignore_index=ignore_index,
-            task = "multiclass",
+            task="multiclass",
         )
         return acc
 
