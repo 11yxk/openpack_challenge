@@ -15,8 +15,6 @@ from openpack_toolkit.codalab.operation_segmentation import (
     construct_submission_dict, eval_operation_segmentation_wrapper,
     make_submission_zipfile)
 from my_model import ctrgcn_base as CTRGCN
-
-from openpack_torch.models.keypoint.graph_new import get_adjacency_matrix
 from openpack_torch.models.keypoint.graph_new1 import Graph
 import pickle
 import loss_fn
