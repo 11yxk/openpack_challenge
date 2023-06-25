@@ -1,5 +1,5 @@
 # openpack_challenge
-Pytorch implementation of paper '' A Spatial-Temporal Graph Convolutional Networks-based Approach for the OpenPack Challenge 2022''. 
+Pytorch implementation of paper [A Spatial-Temporal Graph Convolutional Networks-based Approach for the OpenPack Challenge 2022](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10150404). 
 We won the 3rd place in the [OpenPack challenge 2022](https://open-pack.github.io/challenge2022).
 
 # Get started
